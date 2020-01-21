@@ -16,7 +16,7 @@ export class HttpClientVillainService extends VillainsService {
     super();
    }
 
-  getVillains(): Observable<Villain[]> {
+  getVillains(): Observable<Villain[]> {    
     return this.http.get<Villain[]>(this.villainsUrl).pipe(
       catchError(this.handleError)
     );

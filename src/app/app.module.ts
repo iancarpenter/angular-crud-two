@@ -8,10 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { VillainInMemDataService } from './services/villain-in-mem-data.service';
+import { ListVillainsComponent } from './components/list-villains/list-villains.component';
+import { HttpClientVillainService } from './services/http-client-villain.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListVillainsComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,7 @@ import { VillainInMemDataService } from './services/villain-in-mem-data.service'
     environment.production ?
     [] : InMemoryWebApiModule.forRoot(VillainInMemDataService)
   ],
-  providers: [],
+  providers: [HttpClientVillainService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
