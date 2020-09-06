@@ -23,7 +23,7 @@ import { HttpClientVillainService } from './services/http-client-villain.service
     environment.production ?
     [] : InMemoryWebApiModule.forRoot(VillainInMemDataService)
   ],
-  providers: [HttpClientVillainService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
